@@ -1,0 +1,1108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, &quot;Duplicate entry '12' for key
+        'osobni_cislo'&quot;) [SQL: 'INSERT INTO uzivatele (osobni_cislo, jmeno, _password, email, aktivni, `admin`,
+        id_pobocka) VALUES (%(osobni_cislo)s, %(jmeno)s, %(_password)s, %(email)s, %(aktivni)s, %(admin)s,
+        %(id_pobocka)s)'] [parameters: {'osobni_cislo': '12', 'jmeno': 'user', '_password':
+        b'$2b$12$IY1v8A7TiNu.XOqpX1uU/u0b2InPvFtr7ZabBsLbvz2MWq3qdRsW6', 'email': None, 'aktivni': 1, 'admin': 0,
+        'id_pobocka': '1'}] (Background on this error at: http://sqlalche.me/e/gkpj) // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css"
+          type="text/css">
+    <!-- We need to make sure this has a favicon so that the debugger does
+         not by accident trigger a request to /favicon.ico which might
+         change the application state. -->
+    <link rel="shortcut icon"
+          href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script type="text/javascript">
+        var TRACEBACK = 140366630887320,
+            CONSOLE_MODE = false,
+            EVALEX = true,
+            EVALEX_TRUSTED = false,
+            SECRET = "ySzeBwcTBz2KF0Nkkhxh";
+    </script>
+</head>
+<body style="background-color: #fff">
+<div class="debugger">
+    <h1>sqlalchemy.exc.IntegrityError</h1>
+    <div class="detail">
+        <p class="errormsg">sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, &quot;Duplicate entry
+            '12' for key 'osobni_cislo'&quot;) [SQL: 'INSERT INTO uzivatele (osobni_cislo, jmeno, _password, email,
+            aktivni, `admin`, id_pobocka) VALUES (%(osobni_cislo)s, %(jmeno)s, %(_password)s, %(email)s, %(aktivni)s,
+            %(admin)s, %(id_pobocka)s)'] [parameters: {'osobni_cislo': '12', 'jmeno': 'user', '_password':
+            b'$2b$12$IY1v8A7TiNu.XOqpX1uU/u0b2InPvFtr7ZabBsLbvz2MWq3qdRsW6', 'email': None, 'aktivni': 1, 'admin': 0,
+            'id_pobocka': '1'}] (Background on this error at: http://sqlalche.me/e/gkpj)</p>
+    </div>
+    <h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+    <div class="traceback">
+
+        <ul>
+            <li>
+                <div class="frame" id="frame-140366630886648">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py"</cite>,
+                        line <em class="line">1997</em>,
+                        in <code class="function">__call__</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">                </span>error = None</pre>
+                        <pre class="line before"><span class="ws">            </span>ctx.auto_pop(error)</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def __call__(self, environ, start_response):</pre>
+                        <pre class="line before"><span class="ws">        </span>&quot;&quot;&quot;Shortcut for :attr:`wsgi_app`.&quot;&quot;&quot;</pre>
+                        <pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def __repr__(self):</pre>
+                        <pre class="line after"><span class="ws">        </span>return '&lt;%s %r&gt;' % (</pre>
+                        <pre class="line after"><span class="ws">            </span>self.__class__.__name__,</pre>
+                        <pre class="line after"><span class="ws">            </span>self.name,</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366630886704">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py"</cite>,
+                        line <em class="line">1985</em>,
+                        in <code class="function">wsgi_app</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>try:</pre>
+                        <pre class="line before"><span class="ws">            </span>try:</pre>
+                        <pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+                        <pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+                        <pre class="line before"><span class="ws">                </span>error = e</pre>
+                        <pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+                        <pre class="line after"><span class="ws">            </span>except:</pre>
+                        <pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+                        <pre class="line after"><span class="ws">                </span>raise</pre>
+                        <pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+                        <pre class="line after"><span class="ws">        </span>finally:</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980088">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py"</cite>,
+                        line <em class="line">1540</em>,
+                        in <code class="function">handle_exception</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">            </span># if we want to repropagate the exception, we can attempt to</pre>
+                        <pre class="line before"><span class="ws">            </span># raise it with the whole traceback in case we can do that</pre>
+                        <pre class="line before"><span class="ws">            </span># (the function was actually called from the except part)</pre>
+                        <pre class="line before"><span class="ws">            </span># otherwise, we just raise the error again</pre>
+                        <pre class="line before"><span class="ws">            </span>if exc_value is e:</pre>
+                        <pre class="line current"><span class="ws">                </span>reraise(exc_type, exc_value, tb)</pre>
+                        <pre class="line after"><span class="ws">            </span>else:</pre>
+                        <pre class="line after"><span class="ws">                </span>raise e</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">        </span>self.log_exception((exc_type, exc_value, tb))</pre>
+                        <pre class="line after"><span class="ws">        </span>if handler is None:</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980144">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/_compat.py"</cite>,
+                        line <em class="line">33</em>,
+                        in <code class="function">reraise</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">    </span>from io import StringIO</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def reraise(tp, value, tb=None):</pre>
+                        <pre class="line before"><span class="ws">        </span>if value.__traceback__ is not tb:</pre>
+                        <pre class="line before"><span
+                                class="ws">            </span>raise value.with_traceback(tb)</pre>
+                        <pre class="line current"><span class="ws">        </span>raise value</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>implements_to_string = _identity</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws"></span>else:</pre>
+                        <pre class="line after"><span class="ws">    </span>text_type = unicode</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629979304">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py"</cite>,
+                        line <em class="line">1982</em>,
+                        in <code class="function">wsgi_app</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span
+                                class="ws">        </span>ctx = self.request_context(environ)</pre>
+                        <pre class="line before"><span class="ws">        </span>ctx.push()</pre>
+                        <pre class="line before"><span class="ws">        </span>error = None</pre>
+                        <pre class="line before"><span class="ws">        </span>try:</pre>
+                        <pre class="line before"><span class="ws">            </span>try:</pre>
+                        <pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+                        <pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+                        <pre class="line after"><span class="ws">                </span>error = e</pre>
+                        <pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+                        <pre class="line after"><span class="ws">            </span>except:</pre>
+                        <pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980256">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py"</cite>,
+                        line <em class="line">1614</em>,
+                        in <code class="function">full_dispatch_request</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">            </span>request_started.send(self)</pre>
+                        <pre class="line before"><span
+                                class="ws">            </span>rv = self.preprocess_request()</pre>
+                        <pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+                        <pre class="line before"><span
+                                class="ws">                </span>rv = self.dispatch_request()</pre>
+                        <pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+                        <pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+                        <pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def finalize_request(self, rv, from_error_handler=False):</pre>
+                        <pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Given the return value from a view function this finalizes</pre>
+                        <pre class="line after"><span class="ws">        </span>the request by converting it into a response and invoking the</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980312">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py"</cite>,
+                        line <em class="line">1517</em>,
+                        in <code class="function">handle_user_exception</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">            </span>return self.handle_http_exception(e)</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span
+                                class="ws">        </span>handler = self._find_error_handler(e)</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">        </span>if handler is None:</pre>
+                        <pre class="line current"><span
+                                class="ws">            </span>reraise(exc_type, exc_value, tb)</pre>
+                        <pre class="line after"><span class="ws">        </span>return handler(e)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def handle_exception(self, e):</pre>
+                        <pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Default exception handling that kicks in when an exception</pre>
+                        <pre class="line after"><span class="ws">        </span>occurs that is not caught.  In debug mode the exception will</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980368">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/_compat.py"</cite>,
+                        line <em class="line">33</em>,
+                        in <code class="function">reraise</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">    </span>from io import StringIO</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def reraise(tp, value, tb=None):</pre>
+                        <pre class="line before"><span class="ws">        </span>if value.__traceback__ is not tb:</pre>
+                        <pre class="line before"><span
+                                class="ws">            </span>raise value.with_traceback(tb)</pre>
+                        <pre class="line current"><span class="ws">        </span>raise value</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>implements_to_string = _identity</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws"></span>else:</pre>
+                        <pre class="line after"><span class="ws">    </span>text_type = unicode</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629979640">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py"</cite>,
+                        line <em class="line">1612</em>,
+                        in <code class="function">full_dispatch_request</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>self.try_trigger_before_first_request_functions()</pre>
+                        <pre class="line before"><span class="ws">        </span>try:</pre>
+                        <pre class="line before"><span class="ws">            </span>request_started.send(self)</pre>
+                        <pre class="line before"><span
+                                class="ws">            </span>rv = self.preprocess_request()</pre>
+                        <pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+                        <pre class="line current"><span
+                                class="ws">                </span>rv = self.dispatch_request()</pre>
+                        <pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+                        <pre class="line after"><span
+                                class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+                        <pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def finalize_request(self, rv, from_error_handler=False):</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980480">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py"</cite>,
+                        line <em class="line">1598</em>,
+                        in <code class="function">dispatch_request</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span># request came with the OPTIONS method, reply automatically</pre>
+                        <pre class="line before"><span class="ws">        </span>if getattr(rule, 'provide_automatic_options', False) \</pre>
+                        <pre class="line before"><span class="ws">           </span>and req.method == 'OPTIONS':</pre>
+                        <pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+                        <pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+                        <pre class="line current"><span class="ws">        </span>return self.view_functions[rule.endpoint](**req.view_args)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def full_dispatch_request(self):</pre>
+                        <pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Dispatches the request and on top of that performs request</pre>
+                        <pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+                        <pre class="line after"><span class="ws">        </span>error handling.</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980536">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/skladapi/app.py"</cite>,
+                        line <em class="line">90</em>,
+                        in <code class="function">create_user</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">            </span>id_pobocka = request_json['id_pobocka']</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">            </span>from skladapi.models import Uzivatel</pre>
+                        <pre class="line before"><span class="ws">            </span>uzivatel = Uzivatel(osobni_cislo=oscislo, jmeno=name, password=password, id_pobocka=id_pobocka)</pre>
+                        <pre class="line before"><span class="ws">            </span>db.session.add(uzivatel)</pre>
+                        <pre class="line current"><span class="ws">            </span>db.session.commit()</pre>
+                        <pre class="line after"><span class="ws">            </span>return jsonify(Uzivatel.query.filter_by(osobni_cislo=oscislo).first()), 200</pre>
+                        <pre class="line after"><span class="ws">            </span># except KeyError as ke:</pre>
+                        <pre class="line after"><span class="ws">            </span>#     return jsonify(&quot;bad arguments&quot;, str(ke)), 400</pre>
+                        <pre class="line after"><span class="ws">            </span># except IntegrityError:</pre>
+                        <pre class="line after"><span class="ws">            </span>#     return jsonify(&quot;user already exists&quot;), 400</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629979976">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py"</cite>,
+                        line <em class="line">153</em>,
+                        in <code class="function">do</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws"></span>&quot;&quot;&quot;Old name for backwards compatibility.&quot;&quot;&quot;</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws"></span>def instrument(name):</pre>
+                        <pre class="line before"><span class="ws">    </span>def do(self, *args, **kwargs):</pre>
+                        <pre class="line current"><span class="ws">        </span>return getattr(self.registry(), name)(*args, **kwargs)</pre>
+                        <pre class="line after"><span class="ws">    </span>return do</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws"></span>for meth in Session.public_methods:</pre>
+                        <pre class="line after"><span class="ws">    </span>setattr(scoped_session, meth, instrument(meth))</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629979192">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py"</cite>,
+                        line <em class="line">943</em>,
+                        in <code class="function">commit</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">            </span>if not self.autocommit:</pre>
+                        <pre class="line before"><span class="ws">                </span>self.begin()</pre>
+                        <pre class="line before"><span class="ws">            </span>else:</pre>
+                        <pre class="line before"><span class="ws">                </span>raise sa_exc.InvalidRequestError(&quot;No transaction is begun.&quot;)</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line current"><span class="ws">        </span>self.transaction.commit()</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def prepare(self):</pre>
+                        <pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Prepare the current transaction in progress for two phase commit.</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">        </span>If no transaction is in progress, this method raises an</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629979920">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py"</cite>,
+                        line <em class="line">467</em>,
+                        in <code class="function">commit</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>self._state = PREPARED</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def commit(self):</pre>
+                        <pre class="line before"><span
+                                class="ws">        </span>self._assert_active(prepared_ok=True)</pre>
+                        <pre class="line before"><span class="ws">        </span>if self._state is not PREPARED:</pre>
+                        <pre class="line current"><span class="ws">            </span>self._prepare_impl()</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">        </span>if self._parent is None or self.nested:</pre>
+                        <pre class="line after"><span class="ws">            </span>for t in set(self._connections.values()):</pre>
+                        <pre class="line after"><span class="ws">                </span>t[1].commit()</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980200">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py"</cite>,
+                        line <em class="line">447</em>,
+                        in <code class="function">_prepare_impl</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">        </span>if not self.session._flushing:</pre>
+                        <pre class="line before"><span
+                                class="ws">            </span>for _flush_guard in range(100):</pre>
+                        <pre class="line before"><span
+                                class="ws">                </span>if self.session._is_clean():</pre>
+                        <pre class="line before"><span class="ws">                    </span>break</pre>
+                        <pre class="line current"><span class="ws">                </span>self.session.flush()</pre>
+                        <pre class="line after"><span class="ws">            </span>else:</pre>
+                        <pre class="line after"><span class="ws">                </span>raise exc.FlushError(</pre>
+                        <pre class="line after"><span class="ws">                    </span>&quot;Over 100 subsequent flushes have occurred within &quot;</pre>
+                        <pre class="line after"><span class="ws">                    </span>&quot;session.commit() - is an after_flush() hook &quot;</pre>
+                        <pre class="line after"><span class="ws">                    </span>&quot;creating new objects?&quot;)</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980424">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py"</cite>,
+                        line <em class="line">2243</em>,
+                        in <code class="function">flush</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">        </span>if self._is_clean():</pre>
+                        <pre class="line before"><span class="ws">            </span>return</pre>
+                        <pre class="line before"><span class="ws">        </span>try:</pre>
+                        <pre class="line before"><span class="ws">            </span>self._flushing = True</pre>
+                        <pre class="line current"><span class="ws">            </span>self._flush(objects)</pre>
+                        <pre class="line after"><span class="ws">        </span>finally:</pre>
+                        <pre class="line after"><span class="ws">            </span>self._flushing = False</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def _flush_warning(self, method):</pre>
+                        <pre class="line after"><span class="ws">        </span>util.warn(</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980592">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py"</cite>,
+                        line <em class="line">2369</em>,
+                        in <code class="function">_flush</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">            </span>transaction.commit()</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">        </span>except:</pre>
+                        <pre class="line before"><span class="ws">            </span>with util.safe_reraise():</pre>
+                        <pre class="line current"><span class="ws">                </span>transaction.rollback(_capture_exception=True)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def bulk_save_objects(</pre>
+                        <pre class="line after"><span class="ws">            </span>self, objects, return_defaults=False, update_changed_only=True):</pre>
+                        <pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Perform a bulk save of the given list of objects.</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980648">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py"</cite>,
+                        line <em class="line">66</em>,
+                        in <code class="function">__exit__</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span># see #2703 for notes</pre>
+                        <pre class="line before"><span class="ws">        </span>if type_ is None:</pre>
+                        <pre class="line before"><span class="ws">            </span>exc_type, exc_value, exc_tb = self._exc_info</pre>
+                        <pre class="line before"><span class="ws">            </span>self._exc_info = None   # remove potential circular references</pre>
+                        <pre class="line before"><span class="ws">            </span>if not self.warn_only:</pre>
+                        <pre class="line current"><span class="ws">                </span>compat.reraise(exc_type, exc_value, exc_tb)</pre>
+                        <pre class="line after"><span class="ws">        </span>else:</pre>
+                        <pre class="line after"><span class="ws">            </span>if not compat.py3k and self._exc_info and self._exc_info[1]:</pre>
+                        <pre class="line after"><span class="ws">                </span># emulate Py3K's behavior of telling us when an exception</pre>
+                        <pre class="line after"><span class="ws">                </span># occurs in an exception handler.</pre>
+                        <pre class="line after"><span class="ws">                </span>warn(</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980704">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py"</cite>,
+                        line <em class="line">187</em>,
+                        in <code class="function">reraise</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>if cause is not None:</pre>
+                        <pre class="line before"><span class="ws">            </span>assert cause is not value, &quot;Same cause emitted&quot;</pre>
+                        <pre class="line before"><span class="ws">            </span>value.__cause__ = cause</pre>
+                        <pre class="line before"><span class="ws">        </span>if value.__traceback__ is not tb:</pre>
+                        <pre class="line before"><span
+                                class="ws">            </span>raise value.with_traceback(tb)</pre>
+                        <pre class="line current"><span class="ws">        </span>raise value</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws"></span>else:</pre>
+                        <pre class="line after"><span class="ws">    </span># not as nice as that of Py3K, but at least preserves</pre>
+                        <pre class="line after"><span
+                                class="ws">    </span># the code line where the issue occurred</pre>
+                        <pre class="line after"><span class="ws">    </span>exec(&quot;def reraise(tp, value, tb=None, cause=None):\n&quot;</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980760">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py"</cite>,
+                        line <em class="line">2333</em>,
+                        in <code class="function">_flush</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>flush_context.transaction = transaction = self.begin(</pre>
+                        <pre class="line before"><span class="ws">            </span>subtransactions=True)</pre>
+                        <pre class="line before"><span class="ws">        </span>try:</pre>
+                        <pre class="line before"><span class="ws">            </span>self._warn_on_events = True</pre>
+                        <pre class="line before"><span class="ws">            </span>try:</pre>
+                        <pre class="line current"><span class="ws">                </span>flush_context.execute()</pre>
+                        <pre class="line after"><span class="ws">            </span>finally:</pre>
+                        <pre class="line after"><span
+                                class="ws">                </span>self._warn_on_events = False</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">            </span>self.dispatch.after_flush(self, flush_context)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980816">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py"</cite>,
+                        line <em class="line">391</em>,
+                        in <code class="function">execute</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">                    </span>n.execute_aggregate(self, set_)</pre>
+                        <pre class="line before"><span class="ws">        </span>else:</pre>
+                        <pre class="line before"><span class="ws">            </span>for rec in topological.sort(</pre>
+                        <pre class="line before"><span class="ws">                    </span>self.dependencies,</pre>
+                        <pre class="line before"><span class="ws">                    </span>postsort_actions):</pre>
+                        <pre class="line current"><span class="ws">                </span>rec.execute(self)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def finalize_flush_changes(self):</pre>
+                        <pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;mark processed objects as clean / deleted after a successful</pre>
+                        <pre class="line after"><span class="ws">        </span>flush().</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980872">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py"</cite>,
+                        line <em class="line">556</em>,
+                        in <code class="function">execute</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def execute(self, uow):</pre>
+                        <pre class="line before"><span class="ws">        </span>persistence.save_obj(self.mapper,</pre>
+                        <pre class="line before"><span class="ws">                             </span>uow.states_for_mapper_hierarchy(</pre>
+                        <pre class="line before"><span class="ws">                                 </span>self.mapper, False, False),</pre>
+                        <pre class="line current"><span class="ws">                             </span>uow</pre>
+                        <pre class="line after"><span class="ws">                             </span>)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span
+                                class="ws">    </span>def per_state_flush_actions(self, uow):</pre>
+                        <pre class="line after"><span class="ws">        </span>states = list(uow.states_for_mapper_hierarchy(</pre>
+                        <pre class="line after"><span class="ws">            </span>self.mapper, False, False))</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980928">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py"</cite>,
+                        line <em class="line">181</em>,
+                        in <code class="function">save_obj</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">                                </span>cached_connections,</pre>
+                        <pre class="line before"><span class="ws">                                </span>mapper, table, update)</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">        </span>_emit_insert_statements(base_mapper, uowtransaction,</pre>
+                        <pre class="line before"><span class="ws">                                </span>cached_connections,</pre>
+                        <pre class="line current"><span class="ws">                                </span>mapper, table, insert)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>_finalize_insert_update_commands(</pre>
+                        <pre class="line after"><span class="ws">        </span>base_mapper, uowtransaction,</pre>
+                        <pre class="line after"><span class="ws">        </span>chain(</pre>
+                        <pre class="line after"><span class="ws">            </span>(</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629980984">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py"</cite>,
+                        line <em class="line">866</em>,
+                        in <code class="function">_emit_insert_statements</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">                    </span>result = connection.execute(</pre>
+                        <pre class="line before"><span class="ws">                        </span>statement.values(value_params),</pre>
+                        <pre class="line before"><span class="ws">                        </span>params)</pre>
+                        <pre class="line before"><span class="ws">                </span>else:</pre>
+                        <pre class="line before"><span class="ws">                    </span>result = cached_connections[connection].\</pre>
+                        <pre class="line current"><span class="ws">                        </span>execute(statement, params)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">                </span>primary_key = result.context.inserted_primary_key</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span
+                                class="ws">                </span>if primary_key is not None:</pre>
+                        <pre class="line after"><span class="ws">                    </span># set primary key attributes</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981040">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py"</cite>,
+                        line <em class="line">948</em>,
+                        in <code class="function">execute</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>try:</pre>
+                        <pre class="line before"><span class="ws">            </span>meth = object._execute_on_connection</pre>
+                        <pre class="line before"><span class="ws">        </span>except AttributeError:</pre>
+                        <pre class="line before"><span class="ws">            </span>raise exc.ObjectNotExecutableError(object)</pre>
+                        <pre class="line before"><span class="ws">        </span>else:</pre>
+                        <pre class="line current"><span class="ws">            </span>return meth(self, multiparams, params)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def _execute_function(self, func, multiparams, params):</pre>
+                        <pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Execute a sql.FunctionElement object.&quot;&quot;&quot;</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">        </span>return self._execute_clauseelement(func.select(),</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981376">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/sql/elements.py"</cite>,
+                        line <em class="line">269</em>,
+                        in <code class="function">_execute_on_connection</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">            </span># self</pre>
+                        <pre class="line before"><span class="ws">            </span>return self</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def _execute_on_connection(self, connection, multiparams, params):</pre>
+                        <pre class="line before"><span class="ws">        </span>if self.supports_execution:</pre>
+                        <pre class="line current"><span class="ws">            </span>return connection._execute_clauseelement(self, multiparams, params)</pre>
+                        <pre class="line after"><span class="ws">        </span>else:</pre>
+                        <pre class="line after"><span class="ws">            </span>raise exc.ObjectNotExecutableError(self)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def unique_params(self, *optionaldict, **kwargs):</pre>
+                        <pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Return a copy with :func:`bindparam()` elements replaced.</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981096">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py"</cite>,
+                        line <em class="line">1060</em>,
+                        in <code class="function">_execute_clauseelement</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>ret = self._execute_context(</pre>
+                        <pre class="line before"><span class="ws">            </span>dialect,</pre>
+                        <pre class="line before"><span class="ws">            </span>dialect.execution_ctx_cls._init_compiled,</pre>
+                        <pre class="line before"><span class="ws">            </span>compiled_sql,</pre>
+                        <pre class="line before"><span class="ws">            </span>distilled_params,</pre>
+                        <pre class="line current"><span
+                                class="ws">            </span>compiled_sql, distilled_params</pre>
+                        <pre class="line after"><span class="ws">        </span>)</pre>
+                        <pre class="line after"><span class="ws">        </span>if self._has_events or self.engine._has_events:</pre>
+                        <pre class="line after"><span
+                                class="ws">            </span>self.dispatch.after_execute(self,</pre>
+                        <pre class="line after"><span class="ws">                                        </span>elem, multiparams, params, ret)</pre>
+                        <pre class="line after"><span class="ws">        </span>return ret</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981488">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py"</cite>,
+                        line <em class="line">1200</em>,
+                        in <code class="function">_execute_context</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">            </span>self._handle_dbapi_exception(</pre>
+                        <pre class="line before"><span class="ws">                </span>e,</pre>
+                        <pre class="line before"><span class="ws">                </span>statement,</pre>
+                        <pre class="line before"><span class="ws">                </span>parameters,</pre>
+                        <pre class="line before"><span class="ws">                </span>cursor,</pre>
+                        <pre class="line current"><span class="ws">                </span>context)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">        </span>if self._has_events or self.engine._has_events:</pre>
+                        <pre class="line after"><span class="ws">            </span>self.dispatch.after_cursor_execute(self, cursor,</pre>
+                        <pre class="line after"><span class="ws">                                               </span>statement,</pre>
+                        <pre class="line after"><span class="ws">                                               </span>parameters,</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981544">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py"</cite>,
+                        line <em class="line">1413</em>,
+                        in <code class="function">_handle_dbapi_exception</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">            </span>if newraise:</pre>
+                        <pre class="line before"><span class="ws">                </span>util.raise_from_cause(newraise, exc_info)</pre>
+                        <pre class="line before"><span class="ws">            </span>elif should_wrap:</pre>
+                        <pre class="line before"><span class="ws">                </span>util.raise_from_cause(</pre>
+                        <pre class="line before"><span class="ws">                    </span>sqlalchemy_exception,</pre>
+                        <pre class="line current"><span class="ws">                    </span>exc_info</pre>
+                        <pre class="line after"><span class="ws">                </span>)</pre>
+                        <pre class="line after"><span class="ws">            </span>else:</pre>
+                        <pre class="line after"><span class="ws">                </span>util.reraise(*exc_info)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">        </span>finally:</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981600">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py"</cite>,
+                        line <em class="line">203</em>,
+                        in <code class="function">raise_from_cause</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws"></span>def raise_from_cause(exception, exc_info=None):</pre>
+                        <pre class="line before"><span class="ws">    </span>if exc_info is None:</pre>
+                        <pre class="line before"><span class="ws">        </span>exc_info = sys.exc_info()</pre>
+                        <pre class="line before"><span
+                                class="ws">    </span>exc_type, exc_value, exc_tb = exc_info</pre>
+                        <pre class="line before"><span class="ws">    </span>cause = exc_value if exc_value is not exception else None</pre>
+                        <pre class="line current"><span class="ws">    </span>reraise(type(exception), exception, tb=exc_tb, cause=cause)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws"></span>if py3k:</pre>
+                        <pre class="line after"><span class="ws">    </span>exec_ = getattr(builtins, 'exec')</pre>
+                        <pre class="line after"><span class="ws"></span>else:</pre>
+                        <pre class="line after"><span
+                                class="ws">    </span>def exec_(func_text, globals_, lcl=None):</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981152">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py"</cite>,
+                        line <em class="line">186</em>,
+                        in <code class="function">reraise</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">    </span>def reraise(tp, value, tb=None, cause=None):</pre>
+                        <pre class="line before"><span class="ws">        </span>if cause is not None:</pre>
+                        <pre class="line before"><span class="ws">            </span>assert cause is not value, &quot;Same cause emitted&quot;</pre>
+                        <pre class="line before"><span class="ws">            </span>value.__cause__ = cause</pre>
+                        <pre class="line before"><span class="ws">        </span>if value.__traceback__ is not tb:</pre>
+                        <pre class="line current"><span
+                                class="ws">            </span>raise value.with_traceback(tb)</pre>
+                        <pre class="line after"><span class="ws">        </span>raise value</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws"></span>else:</pre>
+                        <pre class="line after"><span class="ws">    </span># not as nice as that of Py3K, but at least preserves</pre>
+                        <pre class="line after"><span
+                                class="ws">    </span># the code line where the issue occurred</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981208">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py"</cite>,
+                        line <em class="line">1193</em>,
+                        in <code class="function">_execute_context</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">                </span>if not evt_handled:</pre>
+                        <pre class="line before"><span
+                                class="ws">                    </span>self.dialect.do_execute(</pre>
+                        <pre class="line before"><span class="ws">                        </span>cursor,</pre>
+                        <pre class="line before"><span class="ws">                        </span>statement,</pre>
+                        <pre class="line before"><span class="ws">                        </span>parameters,</pre>
+                        <pre class="line current"><span class="ws">                        </span>context)</pre>
+                        <pre class="line after"><span class="ws">        </span>except BaseException as e:</pre>
+                        <pre class="line after"><span class="ws">            </span>self._handle_dbapi_exception(</pre>
+                        <pre class="line after"><span class="ws">                </span>e,</pre>
+                        <pre class="line after"><span class="ws">                </span>statement,</pre>
+                        <pre class="line after"><span class="ws">                </span>parameters,</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981768">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py"</cite>,
+                        line <em class="line">507</em>,
+                        in <code class="function">do_execute</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def do_executemany(self, cursor, statement, parameters, context=None):</pre>
+                        <pre class="line before"><span class="ws">        </span>cursor.executemany(statement, parameters)</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def do_execute(self, cursor, statement, parameters, context=None):</pre>
+                        <pre class="line current"><span class="ws">        </span>cursor.execute(statement, parameters)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def do_execute_no_params(self, cursor, statement, context=None):</pre>
+                        <pre class="line after"><span class="ws">        </span>cursor.execute(statement)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def is_disconnect(self, e, connection, cursor):</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981264">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/cursors.py"</cite>,
+                        line <em class="line">165</em>,
+                        in <code class="function">execute</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>while self.nextset():</pre>
+                        <pre class="line before"><span class="ws">            </span>pass</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">        </span>query = self.mogrify(query, args)</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line current"><span class="ws">        </span>result = self._query(query)</pre>
+                        <pre class="line after"><span class="ws">        </span>self._executed = query</pre>
+                        <pre class="line after"><span class="ws">        </span>return result</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def executemany(self, query, args):</pre>
+                        <pre class="line after"><span class="ws">        </span># type: (str, list) -&gt; int</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981320">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/cursors.py"</cite>,
+                        line <em class="line">321</em>,
+                        in <code class="function">_query</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>self.rownumber = r</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def _query(self, q):</pre>
+                        <pre class="line before"><span class="ws">        </span>conn = self._get_db()</pre>
+                        <pre class="line before"><span class="ws">        </span>self._last_executed = q</pre>
+                        <pre class="line current"><span class="ws">        </span>conn.query(q)</pre>
+                        <pre class="line after"><span class="ws">        </span>self._do_get_result()</pre>
+                        <pre class="line after"><span class="ws">        </span>return self.rowcount</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def _do_get_result(self):</pre>
+                        <pre class="line after"><span class="ws">        </span>conn = self._get_db()</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981432">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py"</cite>,
+                        line <em class="line">860</em>,
+                        in <code class="function">query</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">            </span>if PY2:</pre>
+                        <pre class="line before"><span class="ws">                </span>sql = sql.encode(self.encoding)</pre>
+                        <pre class="line before"><span class="ws">            </span>else:</pre>
+                        <pre class="line before"><span class="ws">                </span>sql = sql.encode(self.encoding, 'surrogateescape')</pre>
+                        <pre class="line before"><span class="ws">        </span>self._execute_command(COMMAND.COM_QUERY, sql)</pre>
+                        <pre class="line current"><span class="ws">        </span>self._affected_rows = self._read_query_result(unbuffered=unbuffered)</pre>
+                        <pre class="line after"><span class="ws">        </span>return self._affected_rows</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span
+                                class="ws">    </span>def next_result(self, unbuffered=False):</pre>
+                        <pre class="line after"><span class="ws">        </span>self._affected_rows = self._read_query_result(unbuffered=unbuffered)</pre>
+                        <pre class="line after"><span class="ws">        </span>return self._affected_rows</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981656">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py"</cite>,
+                        line <em class="line">1061</em>,
+                        in <code class="function">_read_query_result</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">                </span>result.unbuffered_active = False</pre>
+                        <pre class="line before"><span class="ws">                </span>result.connection = None</pre>
+                        <pre class="line before"><span class="ws">                </span>raise</pre>
+                        <pre class="line before"><span class="ws">        </span>else:</pre>
+                        <pre class="line before"><span class="ws">            </span>result = MySQLResult(self)</pre>
+                        <pre class="line current"><span class="ws">            </span>result.read()</pre>
+                        <pre class="line after"><span class="ws">        </span>self._result = result</pre>
+                        <pre class="line after"><span
+                                class="ws">        </span>if result.server_status is not None:</pre>
+                        <pre class="line after"><span class="ws">            </span>self.server_status = result.server_status</pre>
+                        <pre class="line after"><span class="ws">        </span>return result.affected_rows</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981712">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py"</cite>,
+                        line <em class="line">1349</em>,
+                        in <code class="function">read</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>if self.unbuffered_active:</pre>
+                        <pre class="line before"><span
+                                class="ws">            </span>self._finish_unbuffered_query()</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">    </span>def read(self):</pre>
+                        <pre class="line before"><span class="ws">        </span>try:</pre>
+                        <pre class="line current"><span class="ws">            </span>first_packet = self.connection._read_packet()</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span
+                                class="ws">            </span>if first_packet.is_ok_packet():</pre>
+                        <pre class="line after"><span class="ws">                </span>self._read_ok_packet(first_packet)</pre>
+                        <pre class="line after"><span class="ws">            </span>elif first_packet.is_load_local_packet():</pre>
+                        <pre class="line after"><span class="ws">                </span>self._read_load_local_packet(first_packet)</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981824">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py"</cite>,
+                        line <em class="line">1018</em>,
+                        in <code class="function">_read_packet</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">                </span>continue</pre>
+                        <pre class="line before"><span class="ws">            </span>if bytes_to_read &lt; MAX_PACKET_LEN:</pre>
+                        <pre class="line before"><span class="ws">                </span>break</pre>
+                        <pre class="line before"><span class="ws"></span> </pre>
+                        <pre class="line before"><span class="ws">        </span>packet = packet_type(buff, self.encoding)</pre>
+                        <pre class="line current"><span class="ws">        </span>packet.check_error()</pre>
+                        <pre class="line after"><span class="ws">        </span>return packet</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def _read_bytes(self, num_bytes):</pre>
+                        <pre class="line after"><span class="ws">        </span>self._sock.settimeout(self._read_timeout)</pre>
+                        <pre class="line after"><span class="ws">        </span>while True:</pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981880">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py"</cite>,
+                        line <em class="line">384</em>,
+                        in <code class="function">check_error</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span>if self.is_error_packet():</pre>
+                        <pre class="line before"><span class="ws">            </span>self.rewind()</pre>
+                        <pre class="line before"><span class="ws">            </span>self.advance(1)  # field_count == error (we already know that)</pre>
+                        <pre class="line before"><span class="ws">            </span>errno = self.read_uint16()</pre>
+                        <pre class="line before"><span class="ws">            </span>if DEBUG: print(&quot;errno =&quot;, errno)</pre>
+                        <pre class="line current"><span class="ws">            </span>err.raise_mysql_exception(self._data)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws">    </span>def dump(self):</pre>
+                        <pre class="line after"><span class="ws">        </span>dump_packet(self._data)</pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                        <pre class="line after"><span class="ws"></span> </pre>
+                    </div>
+                </div>
+
+            <li>
+                <div class="frame" id="frame-140366629981936">
+                    <h4>File <cite class="filename">"/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/err.py"</cite>,
+                        line <em class="line">107</em>,
+                        in <code class="function">raise_mysql_exception</code></h4>
+                    <div class="source">
+                        <pre class="line before"><span class="ws">        </span># client protocol 4.1</pre>
+                        <pre class="line before"><span class="ws">        </span>errval = data[9:].decode('utf-8', 'replace')</pre>
+                        <pre class="line before"><span class="ws">    </span>else:</pre>
+                        <pre class="line before"><span class="ws">        </span>errval = data[3:].decode('utf-8', 'replace')</pre>
+                        <pre class="line before"><span class="ws">    </span>errorclass = error_map.get(errno, InternalError)</pre>
+                        <pre class="line current"><span class="ws">    </span>raise errorclass(errno, errval)</pre>
+                    </div>
+                </div>
+        </ul>
+        <blockquote>sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, &quot;Duplicate entry '12' for
+            key 'osobni_cislo'&quot;) [SQL: 'INSERT INTO uzivatele (osobni_cislo, jmeno, _password, email, aktivni,
+            `admin`, id_pobocka) VALUES (%(osobni_cislo)s, %(jmeno)s, %(_password)s, %(email)s, %(aktivni)s, %(admin)s,
+            %(id_pobocka)s)'] [parameters: {'osobni_cislo': '12', 'jmeno': 'user', '_password':
+            b'$2b$12$IY1v8A7TiNu.XOqpX1uU/u0b2InPvFtr7ZabBsLbvz2MWq3qdRsW6', 'email': None, 'aktivni': 1, 'admin': 0,
+            'id_pobocka': '1'}] (Background on this error at: http://sqlalche.me/e/gkpj)
+        </blockquote>
+    </div>
+
+    <div class="plain">
+        <form action="/?__debugger__=yes&amp;cmd=paste" method="post">
+            <p>
+                <input type="hidden" name="language" value="pytb">
+                This is the Copy/Paste friendly version of the traceback. <span
+                    class="pastemessage">You can also paste this traceback into
+      a <a href="https://gist.github.com/">gist</a>:
+      <input type="submit" value="create paste"></span>
+            </p>
+            <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py&quot;, line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py&quot;, line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py&quot;, line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/_compat.py&quot;, line 33, in reraise
+    raise value
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py&quot;, line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py&quot;, line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py&quot;, line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/_compat.py&quot;, line 33, in reraise
+    raise value
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py&quot;, line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py&quot;, line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/skladapi/app.py&quot;, line 90, in create_user
+    db.session.commit()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py&quot;, line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py&quot;, line 943, in commit
+    self.transaction.commit()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py&quot;, line 467, in commit
+    self._prepare_impl()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py&quot;, line 447, in _prepare_impl
+    self.session.flush()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py&quot;, line 2243, in flush
+    self._flush(objects)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py&quot;, line 2369, in _flush
+    transaction.rollback(_capture_exception=True)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py&quot;, line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py&quot;, line 187, in reraise
+    raise value
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py&quot;, line 2333, in _flush
+    flush_context.execute()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py&quot;, line 391, in execute
+    rec.execute(self)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py&quot;, line 556, in execute
+    uow
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py&quot;, line 181, in save_obj
+    mapper, table, insert)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py&quot;, line 866, in _emit_insert_statements
+    execute(statement, params)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py&quot;, line 948, in execute
+    return meth(self, multiparams, params)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/sql/elements.py&quot;, line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py&quot;, line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py&quot;, line 1200, in _execute_context
+    context)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py&quot;, line 1413, in _handle_dbapi_exception
+    exc_info
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py&quot;, line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py&quot;, line 186, in reraise
+    raise value.with_traceback(tb)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py&quot;, line 1193, in _execute_context
+    context)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py&quot;, line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/cursors.py&quot;, line 165, in execute
+    result = self._query(query)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/cursors.py&quot;, line 321, in _query
+    conn.query(q)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py&quot;, line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py&quot;, line 1061, in _read_query_result
+    result.read()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py&quot;, line 1349, in read
+    first_packet = self.connection._read_packet()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py&quot;, line 1018, in _read_packet
+    packet.check_error()
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py&quot;, line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File &quot;/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/err.py&quot;, line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, &quot;Duplicate entry '12' for key 'osobni_cislo'&quot;) [SQL: 'INSERT INTO uzivatele (osobni_cislo, jmeno, _password, email, aktivni, `admin`, id_pobocka) VALUES (%(osobni_cislo)s, %(jmeno)s, %(_password)s, %(email)s, %(aktivni)s, %(admin)s, %(id_pobocka)s)'] [parameters: {'osobni_cislo': '12', 'jmeno': 'user', '_password': b'$2b$12$IY1v8A7TiNu.XOqpX1uU/u0b2InPvFtr7ZabBsLbvz2MWq3qdRsW6', 'email': None, 'aktivni': 1, 'admin': 0, 'id_pobocka': '1'}] (Background on this error at: http://sqlalche.me/e/gkpj)</textarea>
+        </form>
+    </div>
+    <div class="explanation">
+        The debugger caught an exception in your WSGI application. You can now
+        look at the traceback which led to the error. <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+    </div>
+    <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+    </div>
+</div>
+
+<div class="pin-prompt">
+    <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+            The console is locked and needs to be unlocked by entering the PIN.
+            You can find the PIN printed out on the standard output of your
+            shell that runs the server.
+            <form>
+        <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+            </form>
+    </div>
+</div>
+</body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/fanny/codes/Python/BP/skladapi/skladapi/app.py", line 90, in create_user
+    db.session.commit()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 943, in commit
+    self.transaction.commit()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 467, in commit
+    self._prepare_impl()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 447, in _prepare_impl
+    self.session.flush()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2243, in flush
+    self._flush(objects)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2369, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 187, in reraise
+    raise value
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2333, in _flush
+    flush_context.execute()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 556, in execute
+    uow
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 866, in _emit_insert_statements
+    execute(statement, params)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/cursors.py", line 165, in execute
+    result = self._query(query)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/cursors.py", line 321, in _query
+    conn.query(q)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py", line 860, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py", line 1061, in _read_query_result
+    result.read()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py", line 1349, in read
+    first_packet = self.connection._read_packet()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py", line 1018, in _read_packet
+    packet.check_error()
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/connections.py", line 384, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/fanny/codes/Python/BP/skladapi/venv/lib/python3.6/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1062, "Duplicate entry '12' for key 'osobni_cislo'") [SQL: 'INSERT INTO uzivatele (osobni_cislo, jmeno, _password, email, aktivni, `admin`, id_pobocka) VALUES (%(osobni_cislo)s, %(jmeno)s, %(_password)s, %(email)s, %(aktivni)s, %(admin)s, %(id_pobocka)s)'] [parameters: {'osobni_cislo': '12', 'jmeno': 'user', '_password': b'$2b$12$IY1v8A7TiNu.XOqpX1uU/u0b2InPvFtr7ZabBsLbvz2MWq3qdRsW6', 'email': None, 'aktivni': 1, 'admin': 0, 'id_pobocka': '1'}] (Background on this error at: http://sqlalche.me/e/gkpj)
+
+-->
